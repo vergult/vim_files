@@ -22,16 +22,11 @@ Bundle "tpope/vim-endwise"
 Bundle "scrooloose/syntastic"
 Bundle "Townk/vim-autoclose"
 Bundle "scrooloose/nerdtree"
-Bundle "sophacles/vim-bundle-sparkup"
-Bundle "panozzaj/vim-autocorrect"
 Bundle 'tomtom/tcomment_vim'
 Bundle "sjl/gundo.vim"
 Bundle "clones/vim-fuzzyfinder"
 Bundle "godlygeek/tabular"
 Bundle "vim-scripts/Gist.vim"
-Bundle "vim-scripts/L9"
-Bundle "Bogdanp/rbrepl.vim"
-Bundle "rson/vim-conque"
 Bundle "kien/ctrlp.vim"
 
 " Snipmate Dependencies
@@ -46,15 +41,18 @@ Bundle 'Lokaltog/vim-powerline'
 Bundle "kana/vim-textobj-user"
 Bundle "nelstrom/vim-textobj-rubyblock"
 Bundle "ervandew/supertab"
-Bundle "kchmck/vim-coffee-script"
+
+" Languages
+Bundle 'vim-ruby/vim-ruby'
 Bundle "pangloss/vim-javascript"
-Bundle 'nono/jquery.vim'
+Bundle 'vim-scripts/jQuery'
 Bundle 'briancollins/vim-jst'
 Bundle "cakebaker/scss-syntax.vim"
-Bundle "tpope/vim-haml"
 Bundle "tpope/vim-markdown"
 Bundle "greyblake/vim-preview"
-Bundle "tpope/vim-bundler"
+Bundle "mattn/zencoding-vim"
+Bundle "digitaltoad/vim-jade"
+Bundle "mmalecki/vim-node.js"
 
 filetype plugin indent on     " and turn it back on!
 

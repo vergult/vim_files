@@ -128,12 +128,6 @@ Provides text-objects for Ruby blocks
 
 http://vimcasts.org/blog/2010/12/a-text-object-for-ruby-blocks/
 
-### sparkup (`ctrl+e`)
-
-Expand CSS selectors `div.event` in to markup `<div class='event'></div>`
-
-http://net.tutsplus.com/articles/general/quick-tip-even-quicker-markup-with-sparkup/
-
 ### fugitive
 
 Git integration
@@ -197,17 +191,6 @@ http://vimcasts.org/episodes/undo-branching-and-gundo-vim/
 Align stuff
 
 http://vimcasts.org/episodes/aligning-text-with-tabular-vim/
-
-### conque
-
-Terminal/Interactive programs
-
-`:Conque zsh`
-
-`:Conque ls`
-
-Note you can also drop back to the terminal using Ctrl+Z, to get
-back to Vim with `%1`. This is not a feature of Conque.
 
 ### tcomment (`//`)
 

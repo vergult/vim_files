@@ -94,9 +94,9 @@ set formatoptions=n
 
 " check to make sure vim has been compiled with colorcolumn support
 " before enabling it
-if exists("+colorcolumn")
-  set colorcolumn=80
-endif
+" if exists("+colorcolumn")
+"   set colorcolumn=80
+" endif
 
 "  ---------------------------------------------------------------------------
 "  Status Line
@@ -212,9 +212,6 @@ vmap <C-c> "+y
 "  Function Keys
 "  ---------------------------------------------------------------------------
 
-" F2 - Terminal
-map <F2> :ConqueTerm zsh<CR>
-
 " F3 - YankRing
 nnoremap <silent> <F3> :YRShow<cr>
 inoremap <silent> <F3> <ESC>:YRShow<cr>
@@ -278,10 +275,6 @@ let g:AutoCloseProtectedRegions = ["Character"]
 
 let my_home = expand("$HOME/")
 
-if filereadable(my_home . '.vim/bundle/vim-autocorrect/autocorrect.vim')
-  source ~/.vim/bundle/vim-autocorrect/autocorrect.vim
-endif
-
 " BLAAAME
 vmap <Leader>gb :<C-U>!git blame <C-R>=expand("%:p") <CR> \| sed -n <C-R>=line("'<") <CR>,<C-R>=line("'>") <CR>p<CR>
 
@@ -303,10 +296,6 @@ vnoremap // :TComment<CR>
 
 " Supertab
 let g:SuperTabContextDefaultCompletionType = "<c-x><c-o>"
-
-" Syntastic
-" let g:syntastic_auto_loc_list=1
-" let g:syntastic_auto_jump=1
 
 "  ---------------------------------------------------------------------------
 "  Global
@@ -342,13 +331,6 @@ map <Leader>c :Rcontroller
 
 " Other files to consider Ruby
 au BufRead,BufNewFile Gemfile,Rakefile,Thorfile,config.ru,Vagrantfile,Guardfile,Capfile set ft=ruby
-
-"  ---------------------------------------------------------------------------
-"  CoffeeScript
-"  ---------------------------------------------------------------------------
-
-let coffee_compile_vert = 1
-au BufNewFile,BufReadPost *.coffee setl foldmethod=indent
 
 "  ---------------------------------------------------------------------------
 "  SASS / SCSS
