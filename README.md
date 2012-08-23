@@ -27,7 +27,7 @@ The leader is mapped to `,`
 
 `,a`     - Search in files (Ack)
 
-`,b`     - Search open buffers (Fuzzy Finder)
+`,b`     - Search open buffers (Ctrlp)
 
 `,d`     - close buffer
 
@@ -150,7 +150,11 @@ http://vimcasts.org/episodes/fugitive-vim---a-complement-to-command-line-git/
 
 Add RVM integration
 
-### ctrlp (`,s`)
+### ctrlp (`,s` `,b`)
+
+Find open buffer by path/filename
+
+`,b buffer_name`
 
 Search for files in your project with minimal keypresses
 
@@ -262,10 +266,6 @@ correct text object or motion.
 ### molokai
 
 My favorite colour scheme for now.
-
-### fuzzyfinder (`,b`)
-
-Find open buffer by path/filename
 
 ### taglist (`,l`)
 

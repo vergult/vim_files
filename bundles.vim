@@ -24,7 +24,6 @@ Bundle "Townk/vim-autoclose"
 Bundle "scrooloose/nerdtree"
 Bundle 'tomtom/tcomment_vim'
 Bundle "sjl/gundo.vim"
-Bundle "clones/vim-fuzzyfinder"
 Bundle "godlygeek/tabular"
 Bundle "vim-scripts/Gist.vim"
 Bundle "vim-scripts/L9"

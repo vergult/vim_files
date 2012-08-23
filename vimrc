@@ -230,8 +230,10 @@ imap  <silent> <F6> <Esc> mmgg=G`m^zz
 " Ctrlp
 " Disable default ctrlp mapping
 let g:ctrlp_map = '<leader>s'
-let g:ctrlp_working_path_mode = 2
+let g:ctrlp_working_path_mode = 'rc'
 let g:ctrlp_max_height = 20
+" Buffer window (find file in open buffers)
+nmap <silent> <leader>b :CtrlPBuffer<CR>
 " Search in current's file directory
 map <leader>sd :CtrlP %%<cr>
 
@@ -265,9 +267,6 @@ map <leader>rt :!ctags --extra=+f --exclude=.git --exclude=log -R * `rvm gemdir`
 " Use only current file to autocomplete from tags
 " set complete=.,t
 set complete=.,w,b,u,t,i
-
-" Buffer window (find file in open buffers)
-nmap <silent> <leader>b :FufBuffer<CR>
 
 " AutoClose
 let g:AutoClosePairs = {'(': ')', '{': '}', '[': ']', '"': '"', "'": "'", '#{': '}'}
@@ -329,11 +328,11 @@ autocmd BufWritePre * :%s/\s\+$//e
 map <leader>sv :CtrlP app/views<cr>
 map <leader>sc :CtrlP app/controllers<cr>
 map <leader>sm :CtrlP app/models<cr>
+map <leader>sl :CtrlP app/lib<cr>
 map <leader>sh :CtrlP app/helpers<cr>
-map <leader>sl :CtrlP lib<cr>
-map <leader>sp :CtrlP public<cr>
 map <leader>sj :CtrlP app/assets/javascripts<cr>
 map <leader>ss :CtrlP app/assets/stylesheets<cr>
+map <leader>st :CtrlP test<cr>
 
 " View routes or Gemfile in large split
 map <leader>or :topleft :split config/routes.rb<cr>
