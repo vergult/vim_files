@@ -191,7 +191,20 @@ map <leader>e :edit %%
 map <leader>v :view %%
 
 " Ignore some binary, versioning and backup files when auto-completing
-set wildignore=.svn,CVS,.git,*.swp,*.jpg,*.png,*.gif,*.pdf,*.bak,.sass-cache
+set wildignore=*.o,*.obj,*~ "stuff to ignore when tab completing
+set wildignore+=*sass-cache*
+set wildignore+=*DS_Store*
+set wildignore+=.svn,CVS,.git
+set wildignore+=*.gem
+set wildignore+=log/*
+set wildignore+=tmp/*
+set wildignore+=coverage/*
+set wildignore+=medias/*
+set wildignore+=*.swp
+set wildignore+=*.bak
+set wildignore+=*.pdf
+set wildignore+=*.png,*.jpg,*.gif
+
 " Set a lower priority for .old files
 set suffixes+=.old
 
