@@ -191,7 +191,7 @@ map <leader>e :edit %%
 map <leader>v :view %%
 
 " Ignore some binary, versioning and backup files when auto-completing
-set wildignore=.svn,CVS,.git,*.swp,*.jpg,*.png,*.gif,*.pdf,*.bak
+set wildignore=.svn,CVS,.git,*.swp,*.jpg,*.png,*.gif,*.pdf,*.bak, \.sass-cache,*.scssc,sprockets%*
 " Set a lower priority for .old files
 set suffixes+=.old
 
@@ -275,17 +275,20 @@ let g:AutoCloseProtectedRegions = ["Character"]
 
 let my_home = expand("$HOME/")
 
-" BLAAAME
-vmap <Leader>gb :<C-U>!git blame <C-R>=expand("%:p") <CR> \| sed -n <C-R>=line("'<") <CR>,<C-R>=line("'>") <CR>p<CR>
-
 " Tabularize
 if exists(":Tab")
-  nmap <leader>a\| :Tab /\|<CR>
-  vmap <leader>a\| :Tab /\|<CR>
-  nmap <leader>a= :Tab /=<CR>
-  vmap <leader>a= :Tab /=<CR>
-  nmap <leader>a: :Tab /:\zs<CR>
-  vmap <leader>a: :Tab /:\zs<CR>
+  nmap <Leader>t= :Tabularize /=<CR>
+  vmap <Leader>t= :Tabularize /=<CR>
+  nmap <Leader>t: :Tabularize /:\zs<CR>
+  vmap <Leader>t: :Tabularize /:\zs<CR>
+  nmap <Leader>t, :Tabularize /,\zs<CR>
+  vmap <Leader>t, :Tabularize /,\zs<CR>
+  nmap <Leader>t> :Tabularize /=>\zs<CR>
+  vmap <Leader>t> :Tabularize /=>\zs<CR>
+  nmap <Leader>t- :Tabularize /-<CR>
+  vmap <Leader>t- :Tabularize /-<CR>
+  nmap <Leader>t" :Tabularize /"<CR>
+  vmap <Leader>t" :Tabularize /"<CR>
 endif
 
 let g:cssColorVimDoNotMessMyUpdatetime = 1
@@ -296,6 +299,18 @@ vnoremap // :TComment<CR>
 
 " Supertab
 let g:SuperTabContextDefaultCompletionType = "<c-x><c-o>"
+
+" Git Blame
+vmap <Leader>gb :<C-U>!git blame <C-R>=expand("%:p") <CR> \| sed -n <C-R>=line("'<") <CR>,<C-R>=line("'>") <CR>p<CR>
+
+" Fugitive
+nmap <Leader>gc :Gcommit -v<CR>
+nmap <Leader>gw :Gwrite<CR>
+nmap <Leader>gs :Gstatus<CR>
+nmap <Leader>gp :Git push<CR>
+" Mnemonic, gu = Git Update
+nmap <Leader>gu :Git pull<CR>
+nmap <Leader>gd :Gdiff<CR>
 
 "  ---------------------------------------------------------------------------
 "  Global

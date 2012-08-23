@@ -134,11 +134,13 @@ Git integration
 
 *Lots* of stuff
 
-`:Gstatus` and press `-` to stage file
+`,gc` - git commit
+`,gs` - git status (and press `-` to stage file)
+`,gp` - git push
+`,gu` - git pull (update)
+`,gd` - git diff
 
 http://vimcasts.org/episodes/fugitive-vim---a-complement-to-command-line-git/
-
-`:help fugitive`
 
 ### rvm
 
