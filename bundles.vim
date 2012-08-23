@@ -27,6 +27,7 @@ Bundle "sjl/gundo.vim"
 Bundle "clones/vim-fuzzyfinder"
 Bundle "godlygeek/tabular"
 Bundle "vim-scripts/Gist.vim"
+Bundle "vim-scripts/L9"
 Bundle "kien/ctrlp.vim"
 
 " Snipmate Dependencies
