@@ -135,9 +135,13 @@ Git integration
 *Lots* of stuff
 
 `,gc` - git commit
+
 `,gs` - git status (and press `-` to stage file)
+
 `,gp` - git push
+
 `,gu` - git pull (update)
+
 `,gd` - git diff
 
 http://vimcasts.org/episodes/fugitive-vim---a-complement-to-command-line-git/
