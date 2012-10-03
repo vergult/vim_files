@@ -60,7 +60,7 @@ endif
 
 set background=dark
 set t_Co=256
-colorscheme solarized
+colorscheme molokai
 
 set splitbelow splitright
 

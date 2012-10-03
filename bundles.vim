@@ -38,7 +38,6 @@ Bundle "garbas/vim-snipmate"
 
 " Color schemes
 Bundle 'tomasr/molokai'
-Bundle 'altercation/vim-colors-solarized'
 
 Bundle 'Lokaltog/vim-powerline'
 Bundle "kana/vim-textobj-user"
