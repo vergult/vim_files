@@ -54,6 +54,7 @@ Bundle "tpope/vim-markdown"
 Bundle "greyblake/vim-preview"
 Bundle "mattn/zencoding-vim"
 Bundle "digitaltoad/vim-jade"
+Bundle "wavded/vim-stylus"
 Bundle "mmalecki/vim-node.js"
 
 filetype plugin indent on     " and turn it back on!
