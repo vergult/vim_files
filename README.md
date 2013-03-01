@@ -9,10 +9,6 @@ Tested on MacOS and Linux
 
 Introduction to Vim: http://blog.interlinked.org/tutorials/vim_tutorial.html
 
-## Quick Install
-
-    curl https://raw.github.com/episko/vim_files/master/bootstrap.sh -o - | sh
-
 ## Basic Mappings
 
 The leader is mapped to `,`
@@ -357,10 +353,6 @@ Note: You will already have a `~/.vim` folder, either delete or move it.
     git clone https://github.com/episko/vim_files ~/.vim
     cd ~/.vim
     rake install
-
-or run:
-
-    curl https://raw.github.com/episko/vim_files/master/bootstrap.sh -o - | sh
 
 #### To update to the latest vim_files
 

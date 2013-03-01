@@ -60,7 +60,7 @@ set winheight=999
 if !exists("autocmd_colorscheme_loaded")
   let autocmd_colorscheme_loaded = 1
   autocmd ColorScheme * highlight GoodNews     ctermbg=black     guibg=#002b37 ctermfg=LightGreen   guifg=#12C934
-  autocmd ColorScheme * highlight WarningPurp  ctermbg=darkgreen guibg=#002b37 ctermfg=LightMagenta guifg=#B543B3
+  autocmd ColorScheme * highlight WarningPurp  ctermbg=darkblue guibg=#002b37 ctermfg=White guifg=#B543B3
 endif
 
 set background=dark
@@ -99,9 +99,9 @@ set formatoptions=n
 
 " check to make sure vim has been compiled with colorcolumn support
 " before enabling it
-" if exists("+colorcolumn")
-"   set colorcolumn=80
-" endif
+if exists("+colorcolumn")
+  set colorcolumn=80
+endif
 
 "  ---------------------------------------------------------------------------
 "  Status Line
@@ -199,12 +199,11 @@ map <leader>v :view %%
 set wildignore=*.o,*.obj,*~ "stuff to ignore when tab completing
 set wildignore+=*sass-cache*
 set wildignore+=*DS_Store*
-set wildignore+=.svn,CVS,.git
+set wildignore+=.svn,CVS,.git,.bzr
 set wildignore+=*.gem
 set wildignore+=log/*
 set wildignore+=tmp/*
 set wildignore+=coverage/*
-set wildignore+=medias/*
 set wildignore+=*.swp
 set wildignore+=*.bak
 set wildignore+=*.pdf
@@ -245,17 +244,26 @@ imap  <silent> <F6> <Esc> mmgg=G`m^zz
 "  Plugins
 "  ---------------------------------------------------------------------------
 
-" Ctrlp
+"  -------------
+"  Ctrlp
+"  -------------
+
 " Disable default ctrlp mapping
 let g:ctrlp_map = '<leader>s'
 let g:ctrlp_working_path_mode = 'rc'
 let g:ctrlp_max_height = 20
+let g:ctrlp_match_window_bottom = 0
+let g:ctrlp_match_window_reversed = 0
+let g:ctrlp_custom_ignore = '\v\~$|\.(o|swp|pyc|wav|mp3|ogg)$|(^|[/\\])\.(hg|git|bzr)($|[/\\])|__init__\.py'
 " Buffer window (find file in open buffers)
 nmap <silent> <leader>b :CtrlPBuffer<CR>
 " Search in current's file directory
 map <leader>sd :CtrlP %%<cr>
 
-" NERDTree
+"  -------------
+"  NERDTree
+"  -------------
+
 let NERDTreeShowBookmarks = 0
 let NERDChristmasTree = 1
 let NERDTreeWinPos = "left"
@@ -267,7 +275,10 @@ let NERDTreeDirArrows = 1
 " open file browser
 map <leader>p :NERDTreeToggle<cr>
 
-" TagList
+"  -------------
+"  TagList
+"  -------------
+
 set tags=./tags;
 " Support for https://github.com/ivalkeen/guard-ctags-bundler
 set tags+=gems.tags
@@ -280,19 +291,25 @@ map <silent><leader>j <C-]>
 " Go back to where you were
 map <silent><leader>jj <C-T>
 " Generate ctags for all bundled gems as well
-map <leader>rt :!ctags --extra=+f --exclude=.git --exclude=log -R * `rvm gemdir`/gems/* `rvm gemdir`/bundler/gems/*<CR><C-M>
+map <leader>rt :!ctags --extra=+f --exclude=.git --exclude=.bzr --exclude=log -R * `rvm gemdir`/gems/* `rvm gemdir`/bundler/gems/*<CR><C-M>
 
 " Use only current file to autocomplete from tags
 " set complete=.,t
 set complete=.,w,b,u,t,i
 
-" AutoClose
+"  -------------
+"  AutoClose
+"  -------------
+
 let g:AutoClosePairs = {'(': ')', '{': '}', '[': ']', '"': '"', "'": "'", '#{': '}'}
 let g:AutoCloseProtectedRegions = ["Character"]
 
 let my_home = expand("$HOME/")
 
-" Tabularize
+"  -------------
+"  Tabularize
+"  -------------
+
 if exists(":Tab")
   nmap <Leader>t= :Tabularize /=<CR>
   vmap <Leader>t= :Tabularize /=<CR>
@@ -310,17 +327,29 @@ endif
 
 let g:cssColorVimDoNotMessMyUpdatetime = 1
 
-" Easy commenting
+"  -------------
+"  TComment
+"  -------------
+
 nnoremap // :TComment<CR>
 vnoremap // :TComment<CR>
 
-" Supertab
+"  -------------
+"  SuperTab
+"  -------------
+
 let g:SuperTabContextDefaultCompletionType = "<c-x><c-o>"
 
-" Git Blame
+"  -------------
+"  Git Blame
+"  -------------
+
 vmap <Leader>gb :<C-U>!git blame <C-R>=expand("%:p") <CR> \| sed -n <C-R>=line("'<") <CR>,<C-R>=line("'>") <CR>p<CR>
 
-" Fugitive
+"  -------------
+"  Fugitive
+"  -------------
+
 nmap <Leader>gc :Gcommit -v<CR>
 nmap <Leader>gw :Gwrite<CR>
 nmap <Leader>gs :Gstatus<CR>
@@ -412,5 +441,5 @@ endif
 "  ---------------------------------------------------------------------------
 
 " When vimrc, either directly or via symlink, is edited, automatically reload it
-" autocmd! bufwritepost .vimrc source %
-" autocmd! bufwritepost vimrc source %
+autocmd! bufwritepost .vimrc source %
+autocmd! bufwritepost vimrc source %

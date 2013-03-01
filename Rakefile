@@ -1,3 +1,4 @@
+desc 'Install vim configuration'
 task :install do
   root = File.expand_path(File.dirname(__FILE__))
 
@@ -11,11 +12,15 @@ task :install do
   puts 'Issues/Wiki: https://github.com/episko/vim_files'
   puts
   puts '*' * 79
+
+  puts 'Linking ~/vimrc to ~/vim/vimrc'
+  system "ln -s ~/.vim/vimrc ~/.vimrc"
 end
 
-desc 'Update to the latest'
+desc 'Update bundles'
 task :update do
-  system('git pull origin master')
+  system "git pull origin master"
+
   puts 'Updating Bundles'
   system "vim -c BundleInstall! -c BundleClean! -c q -c q"
 

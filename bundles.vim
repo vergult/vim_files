@@ -10,7 +10,10 @@ set runtimepath+=~/.vim/bundle/vundle/
 
 call vundle#rc()
 
+" Let Vundle manage Vundle
 Bundle 'gmarik/vundle'
+
+" My Bundles:
 Bundle "mileszs/ack.vim"
 Bundle "tpope/vim-rvm"
 Bundle "tpope/vim-fugitive"
